@@ -1,0 +1,18 @@
+<Image *ngIf="!showVideo"
+#thmb
+(tap)="tapHandler($event)"
+(swipe)="swipeHandler($event)"
+(longPress)="longPressHandler($event)"
+width="{{vidWidth}}"
+height="{{vidHeight}}"
+stretch="fill"
+src="{{thmbSrc}}"></Image>
+<VideoPlayer *ngIf="showVideo"
+#vid
+src="{{videoSrc}}"
+(playbackReady)="playbackReadyHandler($event)"
+(finished)="finishedHandler($event)"
+width="{{vidWidth}}"
+height="{{vidHeight}}"
+autoplay="{{autoplay}}"
+fill="{{fill}}"></VideoPlayer>

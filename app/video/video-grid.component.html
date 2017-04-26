@@ -1,0 +1,25 @@
+<ActionBar title="Video Player" class="action-bar">
+</ActionBar>
+<ScrollView>
+<GridLayout
+#grid
+columns="auto,auto" rows="auto,auto,auto,auto">
+      <StackLayout 
+      col="{{calculateCol(idx)}}"
+      row="{{calculateRow(idx)}}"
+      *ngFor="let video of videos; let idx = index">
+            <ns-videoplayer
+            (tap)="openDetail(video.id)"
+            (longPress)="playPreview(idx)"
+            (videoFinished)="stopPlayback(idx)"
+            (currentTime)="currentTimeCheck($event, idx)"
+            [videoPlaying]="videosPlayback[idx].isPlaying"
+            [videoSrc]="video.src"
+            [thmbSrc]="video.thmb"
+            [vidWidth]="colWidth"
+            [vidHeight]="rowHeight"
+            [autoplay]="false"
+            [fill]="true"></ns-videoplayer>
+      </StackLayout>
+</GridLayout>
+</ScrollView>

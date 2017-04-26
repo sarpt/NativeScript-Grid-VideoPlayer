@@ -1,0 +1,26 @@
+<SlideContainer
+  #container
+  pageIndicators="true"
+  angular="true"
+  (loaded)="loadedHandler()"
+  (start)="startScrollingHandler()"
+  (finished)="finishedScrollingHandler()"
+>
+  <Slide id="{{video.id}}"
+    *ngFor="let video of videos; let idx = index"
+  >
+    <ns-videoplayer
+    (tap)="playVideo(idx)"
+    (longPress)="previewVideo(idx)"
+    (videoFinished)="stopVideo(idx)"
+    (swipe)="changed($event)"
+    [videoPlaying]="videosPlayback[idx].isPlaying"
+    [videoSrc]="video.src"
+    [thmbSrc]="video.thmb"
+    [vidWidth]="vidWidth"
+    [vidHeight]="vidHeight"
+    [autoplay]="false"
+    [fill]="false"
+    ></ns-videoplayer>
+  </Slide>
+</SlideContainer>
