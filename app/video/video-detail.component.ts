@@ -2,11 +2,10 @@ import {Component, OnInit, AfterViewInit, Input, ViewChild, ElementRef} from '@a
 import {ActivatedRoute} from '@angular/router';
 import {screen} from 'platform';
 import {SwipeGestureEventData, SwipeDirection} from 'ui/gestures';
-import {SlideContainer} from 'nativescript-slides';
+import {SlideContainer, Slide} from 'nativescript-slides';
 
 import {VideoService} from './video.service';
 import {IVideo, IVideoPlaybackInfo} from './video';
-
 @Component({
   selector: 'ns-video-detail',
   moduleId: module.id,
@@ -66,20 +65,19 @@ export class VideoDetailComponent implements OnInit, AfterViewInit {
   }
 
   startScrollingHandler() {
-    this.stopVideo(this._currentId);
+    this.stopVideo();
   }
 
-  finishedScrollingHandler() {
-
+  changedScrollingHandler(event) {
+    this.id = event.eventData.newIndex;
   }
 
-  playVideo(id: number) {
-    this.videosPlayback[id].isPlaying = true;
-    this._currentId = id;
+  playVideo() {
+    this.videosPlayback[this.id].isPlaying = true;
   }
 
-  stopVideo(id: number) {
-    this.videosPlayback[id].isPlaying = false;
+  stopVideo() {
+    this.videosPlayback[this.id].isPlaying = false;
   }
 
   previewVideo(id: number) {

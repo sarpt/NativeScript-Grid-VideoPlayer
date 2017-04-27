@@ -58,6 +58,7 @@ export class VideoPlayer implements AfterViewInit, OnDestroy {
     }
     this._videoPlaying = play;
     this.showVideo = play;
+    
   }
 
   currentTimeStartInterval(): void {

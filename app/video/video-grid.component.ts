@@ -44,7 +44,7 @@ export class VideoGridComponent implements OnInit, AfterViewInit {
   }
 
   setExpectedSizes(): void {
-      //let tgt = <GridLayout> this.grid.nativeElement;
+      let tgt = <GridLayout> this.grid.nativeElement;
       this.colWidth = screen.mainScreen.widthDIPs / 2;
       this.rowHeight = screen.mainScreen.heightDIPs / 4;
       //this.colWidth = tgt.getMeasuredWidth() / 2;

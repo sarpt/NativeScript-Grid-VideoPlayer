@@ -1,8 +1,10 @@
 {
-  "description": "NativeScript Application",
-  "license": "SEE LICENSE IN <your-license-filename>",
+  "name": "nativescript-grid-videoplayer",
+  "description": "NativeScript Grid VideoPlayer",
+  "license": "MIT",
+  "version": "0.0.1",
   "readme": "NativeScript Application",
-  "repository": "<fill-your-repository-here>",
+  "repository": "https://github.com/sarpt/NativeScript-Grid-VideoPlayer.git",
   "nativescript": {
     "id": "org.nativescript.GridPlayer",
     "tns-android": {
@@ -20,7 +22,6 @@
     "@angular/platform-browser-dynamic": "4.0.0",
     "@angular/router": "4.0.0",
     "nativescript-angular": "1.5.0",
-    "nativescript-carousel": "^2.4.0",
     "nativescript-permissions": "^1.2.3",
     "nativescript-slides": "^2.2.8",
     "nativescript-theme-core": "~1.0.2",

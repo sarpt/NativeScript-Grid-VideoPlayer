@@ -1,10 +1,9 @@
 <SlideContainer
   #container
-  pageIndicators="true"
   angular="true"
   (loaded)="loadedHandler()"
   (start)="startScrollingHandler()"
-  (finished)="finishedScrollingHandler()"
+  (changed)="changedScrollingHandler($event)"
 >
   <Slide id="{{video.id}}"
     *ngFor="let video of videos; let idx = index"
